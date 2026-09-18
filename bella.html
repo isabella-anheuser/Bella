@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bella's Home Page</title>
+    <!-- Google Fonts for modern sans-serif and elegant cursive -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-image: url("https://img.magnific.com/premium-photo/blue-flash-lightning-blue-background_1316263-193539.jpg");
+	    background-repeat: no-repeat;
+	    background-size: cover;
+            color: #2c2c2c;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .greeting {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            color: #8c8c8c;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards;
+        }
+
+        /* Cursive Name Styling & Drawing Animation */
+        .name-container {
+            margin-bottom: 2rem;
+        }
+
+        .cursive-name {
+            font-family: 'Great Vibes', cursive;
+            font-size: 8.5rem;
+            fill: none;
+            stroke: #1a1a1a;
+            stroke-width: 3;
+            /* The stroke-dasharray and dashoffset create the writing effect */
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: writeName 4.5s cubic-bezier(0.45, 0, 0.55, 1) forwards;
+        }
+
+        /* Navigation Links */
+        .links {
+            opacity: 0;
+            animation: fadeIn 1.5s ease-out 2.5s forwards;
+        }
+
+        .links a {
+            text-decoration: none;
+            color: #FF9C38;
+            margin: 0 15px;
+            font-size: 3.0rem;
+            letter-spacing: 0.1em;
+            transition: color 0.2s ease;
+        }
+
+        .links a:hover {
+            color: #000;
+        }
+
+        /* Animations */
+        @keyframes writeName {
+            to {
+                stroke-dashoffset: 0;
+                /* Optional: Fills the text gently at the end of the script */
+                fill: rgba(26, 200, 26, 1); 
+		
+            }
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- <p class="greeting">Hello, I am</p> -->
+        
+        <div class="name-container">
+            <!-- SVG allows us to animate the stroke path to simulate writing -->
+            <svg width="1100" height="180" viewBox="0 0 1100 180">
+                <text x="50%" y="75%" text-anchor="middle" class="cursive-name">
+                    Isabella Almaraz
+                </text>
+            </svg>
+        </div>
+
+        <nav class="links">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </div>
+
+</body>
+</html>
